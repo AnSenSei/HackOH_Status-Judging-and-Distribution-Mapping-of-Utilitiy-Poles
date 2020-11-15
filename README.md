@@ -9,6 +9,7 @@ using open soucre gis api:arcgis to accomplish mapping and interactions. poping 
 
 (The repo is to be uploaded and completed by judging time in the 2nd day of HackOHI/O.)    
 
+##  Pole Detection and Dataset Building  
 
 First we have a Jupyter Notebook used for requesting AEP pole detection API. The Post send contains images as body and get bounding box (pole position) information as return. Then the notebook uses returned info to crop the image to pop utility poles out. This notebook is also used for data cleaning in building a training dataset and pole working status judge in neural network predicting.    
 
@@ -22,14 +23,15 @@ First we have a Jupyter Notebook used for requesting AEP pole detection API. The
 
          
          
-Dataset       
+## Dataset Exploration      
 
 <div align=center><img width="600" height="450" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Dataset.png"/></div>    
 The data set contains around 750 images of utility poles, and divided to traing set and testing set at a ratio of 0.8/0.2. Each image has a label which can either be {'disposed': 0,'in-service': 1,'in-maintenance': 2}       
 
 
 
-Model    
+## Model       
+
 
 The trainig method we used in this project is transfer learning(Using VGG16 as base model  pretraind with imageNet). The reason we choose is that it can suit the situation of having a small dataset and 
 easily adapt to future complicated tasks (over a simple neural network).         
@@ -40,13 +42,13 @@ easily adapt to future complicated tasks (over a simple neural network).
 <img width=600" height="600" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Accuracy%20and%20Loss.png"/> 
 
 	
- Performance:      
+## Performance:      
  
 
 The model we built can achieved an accuracy of 93.9% on testing set.   
 
 
-Distribution Mapping:        
+## Distribution Mapping:        
 
 Using open source api Arcgis to create the map to show the distribution using points shows a pop up when clicking on the point containing information of geographic information, working status object imgines       
 
