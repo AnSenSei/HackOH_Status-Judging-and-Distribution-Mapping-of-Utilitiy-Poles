@@ -15,14 +15,22 @@ This Jupyter Notebook is for requesting AEP pole detection API. The Post send co
 
 
      
-<img width="200" height="1000" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/PoleDetectionSample.PNG"/>     
+<img width="200" height="1000" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/PoleDetectionSample.PNG"/>        
+
  
 
 
 
+         
+         
+Dataset       
 
-Dataset
 <img width="800" height="600" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Dataset.png"/>     
+
+Model    
+
+<img width="600" height="800" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/ModelSummary.png"/>      
+<img width=600" height="600" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Accuracy%20and%20Loss.png"/> 
 
 
 Refernece:
