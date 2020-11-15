@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+
+    <script src="https://js.arcgis.com/4.15/"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="viewDiv"></div>
+<script>
+
+
+
+
+
+
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/BasemapToggle",
+        "esri/widgets/BasemapGallery",
+        "esri/Graphic",
+        "esri/layers/GraphicsLayer",
+        "esri/popup/content/MediaContent"
+    ], function(Map, MapView, BasemapToggle, BasemapGallery,Graphic, GraphicsLayer,MediaContent) {
+
+
+        var map = new Map({
+            basemap: "topo-vector"
+        });
+
+        var view = new MapView({
+            container: "viewDiv",
+            map: map,
+            center: [-82.86456906501846, 39.91868883204806], // longitude, latitude
+            zoom: 13
+        });
+        var graphicsLayer = new GraphicsLayer();
+        map.add(graphicsLayer);
+
+        var basemapToggle = new BasemapToggle({
+            view: view,
+            nextBasemap: "satellite"
+        });
+        var Arr = [[-83.0347420401336,39.99693913242474,"1.jpg"],[-82.86456906501846, 39.91868883204806,"5.jpg"],[-82.8633134360025,40.062487545912745,"4.jpg"],[-83.03932372780122,40.00719218435091,"6.jpg"],[-83.07487609999723,39.99832340492861,"7.jpg"],[-83.07428543174713,39.99732158167331,"8.jpg"],[-83.07487609999723,39.99832340492861,"9.jpg"],[-83.07507841628431, 39.99814910947032,"10.jpg"],
+            [-83.07549341577287,39.99856219320816,"11.jpg"],[-83.07428543174713,39.99732158167331,"12.jpg"],[-83.02580774202096,39.99119986598729,"14.jpg"],[-83.06287112034799,39.98963567560133,"15.jpg"],[-83.02443364075569,39.98667099793264,"16.jpg"],[-83.02580774202096,39.99119986598729,"17.jpg"],
+        [-83.02443364075569, 39.98667099793264,"18.jpg"],[-83.18363389048474,39.949715268222775,"19.jpg"],[-83.06166551758234,39.98938095928276,"20.jpg"], [-83.17941221349473, 39.94988474261101,'21.jpg'],[-83.03474204013368,39.99693913242474,"23.jpg"],[-83.07507841628431,39.99814910947032,"24.jpg"],[-83.07428543174713,39.99732158167331,"25.jpg"],[-83.03474204013368,39.99693913242474,"26.jpg"],
+                [-83.06287112034799, 39.98963567560133,"27.jpg"],[-83.06166551758234,39.98938095928276,"22.jpg"],[-83.06287112034799, 39.98963567560133,"28.jpg"]];
+
+
+
+        for(i=0;i<Arr.length;i++) {
+
+
+                var point = {
+                    type: "point",
+                    longitude: Arr[i][0],
+                    latitude:  Arr[i][1]
+                };
+
+
+                var simpleMarkerSymbol = {
+                    type: "simple-marker",
+                    color: [226, 119, 40],  // orange
+                    outline: {
+                        color: [255, 255, 255], // white
+                        width: 1
+                    }
+                };
+
+                var attributes = {
+                    Name: "My point",  // The name of the
+                    Location: "("+Arr[i][0]+","+Arr[i][1]+")" , // The owner of the
+                    status:"in-service"
+                };
+                // Create popup template
+                var popupTemplate = {
+
+                    title: "utility pole",
+
+                    content: [{
+                        type: "fields",
+                        fieldInfos: [ {
+                            fieldName: "Location",
+                            visible: true,
+                            label: "Location"
+                        },
+                            {
+
+                                fieldName: "status",
+                                visible: true,
+                                label: "status"
+                            }
+
+
+                        ]
+
+
+                    },
+                        {
+                            type: "media",
+                            mediaInfos: [{
+                                title: "utility pole image",
+                                type: "image",
+                                value: {
+                                    sourceURL: Arr[i][2]
+                                }
+                            }]
+
+                        }
+
+
+                    ]
+
+                };
+
+
+                var pointGraphic = new Graphic({
+                    geometry: point,
+                    symbol: simpleMarkerSymbol,
+                    //*** ADD ***//
+                    attributes: attributes,
+                    popupTemplate: popupTemplate
+                });
+
+
+                var pictureGraphic = new Graphic({
+                    geometry: {
+                        type: "point",
+                        longitude: -118.80657463861,
+                        latitude: 34.0005930608889
+                    },
+                    symbol: {
+                        type: "picture-marker",
+                        url: "https://developers.arcgis.com/labs/images/bluepin.png",
+                        width: "14px",
+                        height: "26px"
+                    }
+                });
+                // Add text below the pin
+                var textGraphic = new Graphic({
+                    geometry: {
+                        type: "point",
+                        longitude: -118.80657463861,
+                        latitude: 34.0005930608889
+                    },
+                    symbol: {
+                        type: "text",
+                        color: [25, 25, 25],
+                        haloColor: [255, 255, 255],
+                        haloSize: "1px",
+                        text: "This is my location!",
+                        xoffset: 0,
+                        yoffset: -25,
+                        font: {
+                            size: 12
+                        }
+                    }
+                });
+
+
+                graphicsLayer.add(pointGraphic);
+
+            }
+
+
+        view.ui.add(basemapToggle, "bottom-right");
+
+    });
+
+</script>
+</body>
+</html>
