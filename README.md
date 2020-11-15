@@ -2,7 +2,7 @@
 ![test](https://github.com/favicon.ico) Liangyu Liu, Junhao Qi.  
 
 This is the project accomplished in HackOHI/O 2020 and is for competing in the challenge of AEP challenge.  
-
+using open soucre gis api:arcgis to accomplish mapping and interactions. poping up informations such as latitude  longtitude, working status and object imagines. 
 
 ![image](https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/DistributionMapping.png)  
 
