@@ -15,7 +15,7 @@ This Jupyter Notebook is for requesting AEP pole detection API. The Post send co
 
 
      
-<img width="200" height="1000" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/PoleDetectionSample.PNG"/>        
+<div align=center><img width="200" height="1000" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/PoleDetectionSample.PNG"/></div>        
 
  
 
