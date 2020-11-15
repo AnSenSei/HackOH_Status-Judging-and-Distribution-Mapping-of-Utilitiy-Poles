@@ -24,8 +24,9 @@ First we have a Jupyter Notebook used for requesting AEP pole detection API. The
          
 Dataset       
 
-<div align=center><img width="800" height="600" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Dataset.png"/></div>    
-The data set contains around 750 images of utility poles, and divided to traing set and testing set at a ratio of 0.8/0.2. Each image has a label which can either be {'disposed': 0,'in-service': 1,'in-maintenance': 2}
+<div align=center><img width="600" height="450" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Dataset.png"/></div>    
+The data set contains around 750 images of utility poles, and divided to traing set and testing set at a ratio of 0.8/0.2. Each image has a label which can either be {'disposed': 0,'in-service': 1,'in-maintenance': 2}       
+
 
 
 Model    
@@ -39,13 +40,16 @@ easily adapt to future complicated tasks (over a simple neural network).
 <img width=600" height="600" src="https://github.com/LiangyuLiu/HackOH_Status-Judging-and-Distribution-Mapping-of-Utilitiy-Poles/blob/main/Deliverables/Accuracy%20and%20Loss.png"/> 
 
 	
-     Performance:
+ Performance:      
+ 
 
 The model we built can achieved an accuracy of 93.9% on testing set.   
 
 
-Distribution Mapping:    
-Using open source api Arcgis to create the map to show the distribution using points shows a pop up when clicking on the point containing information of geographic information, working status object imgines    
+Distribution Mapping:        
+
+Using open source api Arcgis to create the map to show the distribution using points shows a pop up when clicking on the point containing information of geographic information, working status object imgines       
+
 
 
 
